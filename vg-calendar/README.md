@@ -1,4 +1,4 @@
-# vg-booking-widget
+# vg-calendar
 
 ## Project setup
 ```
