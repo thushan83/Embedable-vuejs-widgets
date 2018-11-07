@@ -18,12 +18,11 @@ export default {
     methods:{
         getMonthDates: function(){
               let days = new Date(this.year, this.month, 0).getDate();
-              // console.log(days+"---");
+               console.log(days+"---");
               let week = [0,0,0,0,0,0,0];
               for(let i=1; i < days;i++){
                   week[1] = 1;
-                  alert(moment().format('dddd'));
-               //  console.log("---");
+                  console.log("---");
               }
         }
     },

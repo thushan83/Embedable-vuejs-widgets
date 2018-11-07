@@ -1,20 +1,25 @@
 <template>
+  <div>
   <div id="calendar-root">
     <div id="calendar-header">
       <div id="month-prev-cont">
-        <svg @click="prevMonth()" height="20px" id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><line style="fill:none;stroke:#2F3435;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="87.5" x2="40.5" y1="111" y2="64"/><line style="fill:none;stroke:#2F3435;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="40.5" x2="87.5" y1="64" y2="17"/></g></svg>
+        <svg @click="prevMonth()" height="20px" id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g>
+          <line class="arrow-line" style="fill:none;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="87.5" x2="40.5" y1="111" y2="64"/>
+          <line class="arrow-line" style="fill:none;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="40.5" x2="87.5" y1="64" y2="17"/></g></svg>
       </div>
       <div id="month-text-cont">{{currentMonth}}</div>
       <div id="month-next-cont">
-        <svg @click="nextMonth()" height="20px" id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><line style="fill:none;stroke:#2F3435;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="40.5" x2="87.5" y1="17" y2="64"/><line style="fill:none;stroke:#2F3435;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="87.5" x2="40.5" y1="64" y2="111"/></g></svg>
+        <svg @click="nextMonth()" height="20px" id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g>
+          <line class="arrow-line" style="fill:none;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="40.5" x2="87.5" y1="17" y2="64"/>
+          <line class="arrow-line" style="fill:none;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="87.5" x2="40.5" y1="64" y2="111"/></g></svg>
       </div>
       </div>
     <div id="calendar-body">
       <Weekdays></Weekdays>
-      <Month year="2018" month="this.selectedMonth"></Month>
+      <Month year="this.selectedYear" month="this.selectedMonth"></Month>
     </div>
     <div id="calendar-footer"></div>
-
+  </div>
   </div>
 </template>
 
@@ -31,7 +36,7 @@ export default {
       currentMonth: "",
       msg: 'Welcome to Your Vue.js App',
       selectedMonth:0,
-      selectedYear:0
+      selectedYear:2018
     }
   },
   methods:{
@@ -66,8 +71,12 @@ export default {
 </script>
 
 <style scoped>
+#month-text-cont{
+  color:var(--calendar-month-text-color);
+}
+
 #calendar-header{
-    background-color:  #c1212133;
+    background-color:var(--calendar-header-bg-color);
     height: 25px;
     padding: 10px;
     margin-left: 10%;
@@ -106,33 +115,26 @@ export default {
 
 #calendar-body{
    padding: 10px;
-   background-color: #f1f0f0;
+   background-color: var(--calendar-body-bg-color);
    height: 200px;
    margin-left: 10%;
    margin-right: 10%;
 }
 
 #calendar-footer{
-   background-color:  #c1212133;
+   background-color: var(--calendar-footer-bg-color);
    height: 25px;
    padding:5px;
    margin-left: 10%;
    margin-right: 10%;
 }
 
-@media only screen and (max-width: 400px) {
- /* #calendar-header{
-    width: 100%;
-  }
-
-  #calendar-body{
-    width: 100%;
-  }
-
-  #calendar-footer{
-    width: 100%;
-  }*/
+#calendar-root{
+  padding: 5px;
 }
 
+.arrow-line{
+  stroke: var(--calendar-header-arrow-color);
+}
 
 </style>

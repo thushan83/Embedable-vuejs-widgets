@@ -19,15 +19,17 @@ export default {
 <style scoped>
 #service-container{
     padding: 10px;
-    -webkit-box-shadow: 1px 1px 2px 1px;
-    box-shadow: 1px 1px 6px 1px;
+    background-color: var(--service-item-bg-color);
+    border-radius: 6px;
+    color: var(--service-item-caption-color);
     margin-bottom: 12px;
     margin-left: 10%;
     margin-right: 10%;
     cursor: pointer;
+    text-align: center;
 }
 
 #service-container:hover{
-    background-color: #c1212133;
+    background-color: var(--service-item-hover-color);
 }
 </style>

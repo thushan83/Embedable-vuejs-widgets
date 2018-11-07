@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <div>
+    <div id="root">
             <div id="title_container"><span id="title">{{title}}</span></div>
             <div>
                 <service v-for="srv in services" :key="srv.id" v-bind:srviceId="srv.id" v-bind:caption="srv.caption"></service>
             </div>  
-        </div>      
     </div> 
 </template>
 <script>
@@ -32,11 +30,18 @@ export default {
 <style scoped>
   #title{
      padding: 10px;
-     color: #c12121;
+     color: var(--service-title-color);
      font-size: 22px;
   }
 
   #title_container{
-      padding: 10px;
+     padding: 10px;      
+     text-align: center;
   }
+  
+    #root{
+        background-color: beige;
+        border-radius: 4px;
+        padding-bottom: 10px;
+    }
 </style>

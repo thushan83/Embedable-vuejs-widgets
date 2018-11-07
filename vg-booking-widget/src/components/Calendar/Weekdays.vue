@@ -1,5 +1,5 @@
 <template>
-  <div id="week_day_container">
+  <div id="weekDayContainer">
     <div id="dayContainer" v-for="day in weekdays" :key="day" >
       {{subStr(day)}}
     </div>
@@ -27,7 +27,7 @@ export default{
 }
 </script>
 <style scoped>
-   #week_day_container{
+   #weekDayContainer{
       height: 20px;
       width:100%;
       text-align: center;
@@ -38,6 +38,7 @@ export default{
      width:14%;
      height:100%;
      font-size:10px;
+     color:var(--calendar-day-text-color);
    }
 </style>
 
